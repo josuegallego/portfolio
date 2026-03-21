@@ -72,7 +72,7 @@ export default function Navbar() {
         >
           <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.8rem', color: '#fff', fontWeight: 700 }}>JG</span>
         </div>
-        <span style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.9rem', letterSpacing: '0.05em', color: 'var(--muted)' }}>
+        <span className="hidden min-[380px]:inline-block" style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.9rem', letterSpacing: '0.05em', color: 'var(--muted)' }}>
           josué gallego
         </span>
       </div>
@@ -85,7 +85,8 @@ export default function Navbar() {
       </div>
 
       {/* Right actions */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      {/* 🛠️ AQUI PUEDES AJUSTAR EL ESPACIO ENTRE EL BOTON 'EN' Y 'CV'. Cambia gap: '0.5rem' */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.01rem' }}>
         {/* Language toggle */}
         <button
           onClick={toggle}
@@ -96,7 +97,8 @@ export default function Navbar() {
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: 'var(--text)',
-            padding: '0.55rem 1rem',
+            /* 🛠️ AQUI PUEDES AJUSTAR EL PADDING INTERNO DEL BOTÓN 'EN'. Ej: '0.5rem 0.7rem' */
+            padding: '0.5rem 0.7rem',
             border: '1px solid rgba(255,255,255,0.12)',
             background: 'rgba(255,255,255,0.04)',
             borderRadius: 4,
@@ -136,7 +138,8 @@ export default function Navbar() {
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          {lang === 'es' ? 'Descargar CV' : 'Download CV'}
+          <span className="hidden sm:inline">{lang === 'es' ? 'Descargar CV' : 'Download CV'}</span>
+          <span className="sm:hidden">CV</span>
         </a>
       </div>
     </nav>

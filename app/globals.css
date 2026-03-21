@@ -103,6 +103,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
+  /* 🛠️ AQUI AJUSTAS EL ESPACIO DEL NAVBAR HACIA LOS LADOS DE LA PANTALLA EN PC */
   padding: 1.2rem 3rem;
   display: flex;
   align-items: center;
@@ -135,11 +136,36 @@ nav {
   text-transform: uppercase;
   color: var(--text);
   border: 1px solid var(--border);
+  /* 🛠️ AQUI AJUSTAS LO 'GORDITO' DEL BOTON CV EN PC */
   padding: 0.6rem 1.4rem;
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.02);
   transition: all 0.3s;
   cursor: none;
+}
+
+/* 📱 MODIFICACIONES EXCLUSIVAS PARA CELULAR (MENOS DE 480PX DE ANCHO) */
+@media (max-width: 480px) {
+  nav {
+    padding: 1rem 1rem !important;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  nav>div:last-child {
+    gap: 0.3rem !important;
+  }
+
+  #lang-toggle-btn {
+    padding: 0.45rem 0.5rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  .nav-btn {
+    padding: 0.45rem 0.6rem !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.05em !important;
+  }
 }
 
 .nav-btn:hover {
@@ -345,9 +371,11 @@ nav {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }

@@ -49,7 +49,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experience" ref={ref} style={{ padding: '120px 4rem', position: 'relative' }}>
+    <section id="experience" ref={ref} style={{ padding: 'clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 4rem)', position: 'relative' }}>
       <div className="grad-blob" style={{ width: 300, height: 300, background: 'rgba(124,92,191,0.10)', bottom: '10%', left: '-5%' }} />
 
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>

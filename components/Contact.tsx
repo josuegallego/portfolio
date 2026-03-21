@@ -46,7 +46,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" ref={ref} style={{ padding: '120px 4rem 80px', position: 'relative', overflow: 'hidden' }}>
+    <section id="contact" ref={ref} style={{ padding: 'clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 4rem) 80px', position: 'relative', overflow: 'hidden' }}>
       <div className="grad-blob" style={{ width: 500, height: 500, background: 'rgba(124,92,191,0.12)', top: '0%', left: '50%', transform: 'translateX(-50%)' }} />
 
       <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>

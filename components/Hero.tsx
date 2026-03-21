@@ -80,7 +80,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      style={{ minHeight: '100vh', display: 'flex', position: 'relative', overflow: 'hidden', paddingTop: '80px' }}
+      className="lg:min-h-screen"
+      style={{ display: 'flex', position: 'relative', overflow: 'hidden', paddingTop: 'clamp(140px, 15vh, 180px)', paddingBottom: 'clamp(80px, 15vh, 120px)' }}
     >
       <div className="grad-blob" style={{ width: 500, height: 500, background: 'rgba(0,223,129,0.12)', top: '10%', left: '-10%' }} />
       <div className="grad-blob" style={{ width: 400, height: 400, background: 'rgba(0,180,216,0.08)', bottom: '10%', right: '5%' }} />
@@ -88,8 +89,8 @@ export default function Hero() {
       {/* Left text */}
       <div
         ref={containerRef}
-        style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 4rem', position: 'relative', zIndex: 30, maxWidth: '52%', pointerEvents: 'auto' }}
-        className="hero-left"
+        style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 clamp(1.5rem, 5vw, 4rem)', position: 'relative', zIndex: 30, pointerEvents: 'auto' }}
+        className="hero-left w-full lg:max-w-[52%]"
       >
         <p className="fade-in-up" style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem', animationDelay: '0.1s' }}>
           {tx.greeting}
@@ -136,10 +137,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Mobile Spline */}
-      <div className="lg:hidden" style={{ position: 'absolute', inset: 0, opacity: 0.3, zIndex: 0 }}>
-        <Spline scene="https://prod.spline.design/kXk5PDEG55GgLkDS/scene.splinecode" />
-      </div>
+       {/* Mobile Spline */}
+      {/* Oculto a petición */}
+
 
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 120, background: 'linear-gradient(to top, var(--bg), transparent)', zIndex: 15 }} />
     </section>

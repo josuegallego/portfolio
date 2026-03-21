@@ -47,10 +47,10 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={ref} style={{ padding: '120px 4rem', position: 'relative', overflow: 'hidden' }}>
+    <section id="about" ref={ref} style={{ padding: 'clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 4rem)', position: 'relative', overflow: 'hidden' }}>
       <div className="grad-blob" style={{ width: 350, height: 350, background: 'rgba(201,125,58,0.08)', top: '20%', right: '-5%' }} />
 
-      <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ maxWidth: 1100, margin: '0 auto', gap: 'clamp(3rem, 6vw, 6rem)' }}>
         {/* Left */}
         <div>
           <p className="section-num reveal" style={{ marginBottom: '1rem' }}>{tx_.num} — {tx_.section}</p>

@@ -60,7 +60,7 @@ export default function Skills() {
   const tx_ = tx[lang];
 
   return (
-    <section id="skills" ref={ref} style={{ padding: '120px 4rem', position: 'relative' }}>
+    <section id="skills" ref={ref} style={{ padding: 'clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 4rem)', position: 'relative' }}>
       <div className="grad-blob" style={{ width: 400, height: 400, background: 'rgba(124,92,191,0.10)', bottom: 0, left: '-5%' }} />
 
       {/* Marquee */}
@@ -84,7 +84,7 @@ export default function Skills() {
           <div className="sep" />
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(440px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))', gap: '2rem' }}>
           {categories.map(cat => {
             const catSkills = skills.filter(s => s.cat === cat);
             return (

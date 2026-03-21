@@ -306,7 +306,7 @@ export default function Projects() {
   const ps = projects[lang];
 
   return (
-    <section id="projects" ref={ref} style={{ padding: '120px 4rem', position: 'relative' }}>
+    <section id="projects" ref={ref} style={{ padding: 'clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 4rem)', position: 'relative' }}>
       <div className="grad-blob" style={{ width: 450, height: 450, background: 'rgba(0,180,216,0.07)', top: '30%', right: '-10%' }} />
 
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
@@ -320,7 +320,7 @@ export default function Projects() {
           <p style={{ color: 'var(--muted)', maxWidth: 500 }}>{tx_.sub}</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(480px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))', gap: '1.5rem' }}>
           {ps.map((p) => (
             <div
               key={p.num}
