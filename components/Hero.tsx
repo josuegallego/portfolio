@@ -39,14 +39,25 @@ export default function Hero() {
   }, [lang]);
 
   // Enable pointer events on canvas only (so hover works), wrappers stay none (so buttons aren't blocked)
+  // Enable pointer events on canvas for hover, but forward scroll events to the page
   useEffect(() => {
     const wrapper = splineWrapperRef.current;
     if (!wrapper) return;
     const timeout = setTimeout(() => {
       const canvas = wrapper.querySelector('canvas');
       if (!canvas) return;
-      // Allow hover on the canvas itself for Spline interactivity
       (canvas as HTMLElement).style.pointerEvents = 'auto';
+
+      // Forward wheel events so the page still scrolls
+      const onWheel = (e: WheelEvent) => {
+        window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+      };
+
+      canvas.addEventListener('wheel', onWheel, { passive: true });
+
+      return () => {
+        canvas.removeEventListener('wheel', onWheel);
+      };
     }, 1500);
     return () => clearTimeout(timeout);
   }, []);
@@ -137,7 +148,7 @@ export default function Hero() {
         </div>
       </div>
 
-       {/* Mobile Spline */}
+      {/* Mobile Spline */}
       {/* Oculto a petición */}
 
 
