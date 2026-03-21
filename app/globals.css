@@ -340,3 +340,19 @@ nav {
   min-width: 100% !important;
   min-height: 100% !important;
 }
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradientMove 3s ease-in-out infinite;
+}

@@ -95,9 +95,9 @@ export default function Hero() {
           {tx.greeting}
         </p>
 
-        <h1 className="fade-in-up" style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.02em', color: 'var(--text)', marginBottom: '0.5rem', animationDelay: '0.2s' }}>
-          {tx.name}<br />
-          <span style={{ background: 'linear-gradient(90deg, #00df81, #00b4d8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <h1 className="fade-in-up" style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.02em', marginBottom: '0.5rem', animationDelay: '0.2s' }}>
+          <span className="animate-gradient" style={{ background: 'linear-gradient(90deg, #B1D72B, #00b4d8, #B1D72B)', backgroundSize: '200% auto', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            {tx.name}<br />
             Gallego
           </span>
         </h1>
@@ -130,7 +130,7 @@ export default function Hero() {
       <div style={{ flex: '0 0 55%', position: 'relative', zIndex: 10, minHeight: '100%', pointerEvents: 'none' }} className="hidden lg:flex">
         <div
           ref={splineWrapperRef}
-          style={{ position: 'absolute', top: '-35vh', left: '-10%', width: '130%', height: '150vh', pointerEvents: 'none' }}
+          style={{ position: 'absolute', top: '-25vh', left: '-20%', width: '130%', height: '150vh', pointerEvents: 'none' }}
         >
           <Spline scene="https://prod.spline.design/kXk5PDEG55GgLkDS/scene.splinecode" />
         </div>
