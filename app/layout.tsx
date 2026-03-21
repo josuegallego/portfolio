@@ -5,6 +5,9 @@ import { LangProvider } from '@/context/LangContext';
 export const metadata: Metadata = {
   title: 'Josué Gallego — Multimedia Engineer',
   description: 'Portfolio of Josué Gallego, Multimedia Engineer, UI/UX Explorer & 3D Artist.',
+  icons: {
+    icon: '/sticker.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

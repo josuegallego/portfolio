@@ -48,7 +48,7 @@ const projects = {
       color: '#00b4d8',
       link: 'https://github.com/josuegallego/react-native-wallet',
       image: '/projects/mobile-wallet.png',
-      live: null,
+      live: 'https://youtu.be/WfUSwv-mPHc',
     },
     {
       num: '05',
