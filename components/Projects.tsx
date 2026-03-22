@@ -20,16 +20,17 @@ const projects = {
       image: '/projects/barber-saas.png',
       live: 'https://dashboard-barberia.vercel.app/',
     },
-    {
+        {
       num: '02',
-      title: 'Cali Turismo — App de Turismo',
-      desc: 'Aplicación web de turismo para Santiago de Cali con mapa interactivo Leaflet, galería de fotos por atracción, filtros por categoría y panel de detalles. Construida con Next.js 15, Tailwind CSS y shadcn/ui.',
-      tags: ['Next.js', 'TypeScript', 'Leaflet'],
+      title: 'Mobile Wallet — App Financiera',
+      desc: 'App móvil multiplataforma de billetera personal. Registro e inicio de sesión con Clerk: autenticación OAuth, creación de cuenta con verificación por código de email. Transacciones por categoría, resumen de ingresos/gastos y sincronización con API REST en Express + Neon PostgreSQL.',
+      tags: ['React Native', 'Expo', 'Clerk', 'PostgreSQL'],
       color: '#00b4d8',
-      link: 'https://github.com/josuegallego/Cali-Turismo',
-      image: '/projects/cali-turismo.png',
-      live: 'https://cali-turismo.vercel.app/',
+      link: 'https://github.com/josuegallego/react-native-wallet',
+      image: '/projects/mobile-wallet.png',
+      live: 'https://youtu.be/WfUSwv-mPHc',
     },
+
     {
       num: '03',
       title: 'Jussi Pizza — Web + App de Pedidos',
@@ -40,15 +41,15 @@ const projects = {
       image: '/projects/jussi-pizza.png',
       live: 'https://jussipizza.com/',
     },
-    {
+{
       num: '04',
-      title: 'Mobile Wallet — App Financiera',
-      desc: 'App móvil multiplataforma de billetera personal. Registro e inicio de sesión con Clerk: autenticación OAuth, creación de cuenta con verificación por código de email. Transacciones por categoría, resumen de ingresos/gastos y sincronización con API REST en Express + Neon PostgreSQL.',
-      tags: ['React Native', 'Expo', 'Clerk', 'PostgreSQL'],
+      title: 'Cali Turismo — App de Turismo',
+      desc: 'Aplicación web de turismo para Santiago de Cali con mapa interactivo Leaflet, galería de fotos por atracción, filtros por categoría y panel de detalles. Construida con Next.js 15, Tailwind CSS y shadcn/ui.',
+      tags: ['Next.js', 'TypeScript', 'Leaflet'],
       color: '#00b4d8',
-      link: 'https://github.com/josuegallego/react-native-wallet',
-      image: '/projects/mobile-wallet.png',
-      live: 'https://youtu.be/WfUSwv-mPHc',
+      link: 'https://github.com/josuegallego/Cali-Turismo',
+      image: '/projects/cali-turismo.png',
+      live: 'https://cali-turismo.vercel.app/',
     },
     {
       num: '05',
