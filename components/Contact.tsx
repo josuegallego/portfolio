@@ -52,7 +52,7 @@ export default function Contact() {
       <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
         <p className="section-num reveal" style={{ marginBottom: '1rem', display: 'block' }}>{tx_.num} — {tx_.section}</p>
 
-        <h2 className="reveal" style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 800, lineHeight: 1.0, marginBottom: '1.5rem' }}>
+         <h2 className="reveal" style={{ fontFamily: "var(--syne)", fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 800, lineHeight: 1.0, marginBottom: '1.5rem' }}>
           {tx_.heading}<br />
           <span style={{ background: 'linear-gradient(90deg, #00df81, #00b4d8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             {tx_.accent}
@@ -67,7 +67,7 @@ export default function Contact() {
           href="mailto:josue.gallego@uao.edu.co"
           className="reveal"
           style={{
-            display: 'inline-block', fontFamily: "'Space Mono', monospace", fontSize: '0.85rem',
+            display: 'inline-block', fontFamily: "var(--space-mono)", fontSize: '0.85rem',
             letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text)',
             padding: '1rem 3rem', border: '1px solid var(--accent)', background: 'rgba(124,92,191,0.1)',
             textDecoration: 'none', transition: 'background 0.3s, transform 0.3s', marginBottom: '4rem',
@@ -90,7 +90,7 @@ export default function Contact() {
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--accent)', flexShrink: 0 }}>{s.icon}</svg>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{s.label}</div>
+                <div style={{ fontFamily: "var(--space-mono)", fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{s.label}</div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text)', marginTop: '0.1rem' }}>{s.handle}</div>
               </div>
             </a>
@@ -100,7 +100,7 @@ export default function Contact() {
 
       {/* Footer */}
       <div style={{ borderTop: '1px solid var(--border)', marginTop: '5rem', paddingTop: '2rem', textAlign: 'center' }}>
-        <p style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.7rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>
+        <p style={{ fontFamily: "var(--space-mono)", fontSize: '0.7rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>
           {tx_.footer}
         </p>
       </div>

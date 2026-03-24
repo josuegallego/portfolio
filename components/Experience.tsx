@@ -55,7 +55,7 @@ export default function Experience() {
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div className="reveal" style={{ marginBottom: '4rem' }}>
           <p className="section-num" style={{ marginBottom: '1rem' }}>{tx_.num} — {tx_.section}</p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: "var(--syne)", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, lineHeight: 1.1 }}>
             {tx_.heading}<br />
             <span style={{ color: 'var(--accent)' }}>{tx_.accent}</span>
           </h2>
@@ -72,8 +72,8 @@ export default function Experience() {
             <div className="glass" style={{ padding: '2.5rem', borderRadius: 8, maxWidth: 720 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
                 <div>
-                  <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '1.3rem', fontWeight: 700, color: 'var(--text)' }}>{tx_.job.title}</h3>
-                  <p style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.8rem', color: 'var(--accent)', letterSpacing: '0.05em', marginTop: '0.25rem' }}>{tx_.job.company}</p>
+                  <h3 style={{ fontFamily: "var(--syne)", fontSize: '1.3rem', fontWeight: 700, color: 'var(--text)' }}>{tx_.job.title}</h3>
+                  <p style={{ fontFamily: "var(--space-mono)", fontSize: '0.8rem', color: 'var(--accent)', letterSpacing: '0.05em', marginTop: '0.25rem' }}>{tx_.job.company}</p>
                 </div>
                 <span className="tag">{tx_.job.date}</span>
               </div>
@@ -92,8 +92,8 @@ export default function Experience() {
             <div className="glass" style={{ padding: '2.5rem', borderRadius: 8, maxWidth: 720 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
                 <div>
-                  <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '1.3rem', fontWeight: 700, color: 'var(--text)' }}>{tx_.edu.title}</h3>
-                  <p style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.8rem', color: 'var(--accent2)', letterSpacing: '0.05em', marginTop: '0.25rem' }}>{tx_.edu.institution}</p>
+                  <h3 style={{ fontFamily: "var(--syne)", fontSize: '1.3rem', fontWeight: 700, color: 'var(--text)' }}>{tx_.edu.title}</h3>
+                   <p style={{ fontFamily: "var(--space-mono)", fontSize: '0.8rem', color: 'var(--accent2)', letterSpacing: '0.05em', marginTop: '0.25rem' }}>{tx_.edu.institution}</p>
                 </div>
                 <span className="tag">{tx_.edu.date}</span>
               </div>

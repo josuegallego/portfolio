@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLang } from '@/context/LangContext';
 
 const navLinks = {
@@ -41,22 +42,15 @@ export default function Navbar() {
     >
       {/* Logo / Sticker */}
       <div className="flex items-center gap-3">
-        <img
+        <Image
           src="/sticker.png"
           alt="Josué Gallego sticker"
+          width={42}
+          height={42}
           style={{
-            width: 42,
-            height: 42,
             objectFit: 'contain',
             borderRadius: 4,
             display: 'block',
-          }}
-          onError={e => {
-            // Fallback al cuadro JG si no hay sticker
-            const img = e.currentTarget;
-            img.style.display = 'none';
-            const fallback = img.nextElementSibling as HTMLElement;
-            if (fallback) fallback.style.display = 'flex';
           }}
         />
         {/* Fallback cuadro JG — se oculta si hay sticker */}
@@ -70,9 +64,9 @@ export default function Navbar() {
             borderRadius: 4,
           }}
         >
-          <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.8rem', color: '#fff', fontWeight: 700 }}>JG</span>
+          <span style={{ fontFamily: "var(--space-mono)", fontSize: '0.8rem', color: '#fff', fontWeight: 700 }}>JG</span>
         </div>
-        <span className="hidden min-[380px]:inline-block" style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.9rem', letterSpacing: '0.05em', color: 'var(--muted)' }}>
+        <span className="hidden min-[380px]:inline-block" style={{ fontFamily: "var(--syne)", fontSize: '0.9rem', letterSpacing: '0.05em', color: 'var(--muted)' }}>
           josué gallego
         </span>
       </div>
@@ -92,7 +86,7 @@ export default function Navbar() {
           onClick={toggle}
           id="lang-toggle-btn"
           style={{
-            fontFamily: "'Space Mono', monospace",
+            fontFamily: "var(--space-mono)",
             fontSize: '0.7rem',
             letterSpacing: '0.12em',
             textTransform: 'uppercase',

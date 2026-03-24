@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { useLang } from '@/context/LangContext';
 
 // ─── INSTRUCCIONES PARA IMÁGENES ────────────────────────────────────────────
@@ -170,7 +171,7 @@ const imageStyles = `
     overflow: hidden;
     margin: -2.5rem -2.5rem 1.75rem -2.5rem;
   }
-  .proj-img-wrap img {
+  .proj-img-wrap .next-project-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -178,7 +179,7 @@ const imageStyles = `
     transition: transform 0.5s ease;
     filter: brightness(0.85) saturate(0.9);
   }
-  .project-card:hover .proj-img-wrap img {
+  .project-card:hover .proj-img-wrap .next-project-image {
     transform: scale(1.04);
     filter: brightness(1) saturate(1.1);
   }
@@ -194,7 +195,7 @@ const imageStyles = `
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
   .proj-img-placeholder span {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--space-mono);
     font-size: 0.65rem;
     letter-spacing: 0.12em;
     opacity: 0.35;
@@ -216,7 +217,7 @@ const imageStyles = `
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--space-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -261,15 +262,13 @@ function ProjectImage({
 }) {
   return (
     <div className="proj-img-wrap">
-      <img
+      <Image
         src={src}
         alt={alt}
-        onError={(e) => {
-          const wrap = (e.target as HTMLElement).parentElement!;
-          (e.target as HTMLElement).style.display = 'none';
-          const ph = wrap.querySelector('.proj-img-placeholder') as HTMLElement;
-          if (ph) ph.style.display = 'flex';
-        }}
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        style={{ objectFit: 'cover' }}
+        className="next-project-image"
       />
       <div className="proj-img-placeholder" style={{ display: 'none' }}>
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1" opacity="0.3">
@@ -313,7 +312,7 @@ export default function Projects() {
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div className="reveal" style={{ marginBottom: '3rem' }}>
           <p className="section-num" style={{ marginBottom: '1rem' }}>{tx_.num} — {tx_.section}</p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: "var(--syne)", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, lineHeight: 1.1 }}>
             {tx_.heading}<br />
             <span style={{ color: 'var(--accent)' }}>{tx_.accent}</span>
           </h2>
@@ -331,7 +330,7 @@ export default function Projects() {
               <ProjectImage src={p.image} alt={`${p.title} — ${tx_.imgAlt}`} color={p.color} placeholder={tx_.imgPlaceholder} />
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.7rem', color: p.color, letterSpacing: '0.1em' }}>{p.num}</span>
+                <span style={{ fontFamily: "var(--space-mono)", fontSize: '0.7rem', color: p.color, letterSpacing: '0.1em' }}>{p.num}</span>
                 <a
                   href={p.link} target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio"
                   style={{ color: 'var(--muted)', transition: 'color 0.2s' }}
@@ -344,7 +343,7 @@ export default function Projects() {
                 </a>
               </div>
 
-              <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.75rem', lineHeight: 1.2 }}>
+              <h3 style={{ fontFamily: "var(--syne)", fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.75rem', lineHeight: 1.2 }}>
                 {p.title}
               </h3>
 

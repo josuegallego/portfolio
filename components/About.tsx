@@ -2,6 +2,12 @@
 import { useEffect, useRef } from 'react';
 import { useLang } from '@/context/LangContext';
 
+const marqueeItems = [
+  'React', 'Next.js', 'React Native',
+  'Laravel', 'Node.js', 'PostgreSQL', 'MySQL', 'Blender',
+  'Unity', 'After Effects', 'Figma', 'Git', 'Pro Tools', 'Spline',
+];
+
 const tx = {
   es: {
     num: '01',
@@ -47,14 +53,25 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={ref} style={{ padding: 'clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 4rem)', position: 'relative', overflow: 'hidden' }}>
+    <section id="about" ref={ref} style={{ padding: 'clamp(80px, 10vw, 120px) clamp(1.5rem, 5vw, 4rem)', paddingTop: 'clamp(80px, 10vw, 120px)', position: 'relative', overflow: 'hidden' }}>
       <div className="grad-blob" style={{ width: 350, height: 350, background: 'rgba(201,125,58,0.08)', top: '20%', right: '-5%' }} />
+
+      {/* Marquee */}
+      <div style={{ overflow: 'hidden', marginBottom: '80px', opacity: 0.3 }}>
+        <div className="marquee-track" style={{ gap: '3rem' }}>
+          {[...marqueeItems, ...marqueeItems].map((t, i) => (
+            <span key={i} style={{ fontFamily: "var(--syne)", fontSize: '1.1rem', fontWeight: 700, color: 'var(--text)', whiteSpace: 'nowrap', letterSpacing: '0.05em' }}>
+              {t} <span style={{ color: 'var(--accent)', marginLeft: '1rem' }}>·</span>
+            </span>
+          ))}
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ maxWidth: 1100, margin: '0 auto', gap: 'clamp(3rem, 6vw, 6rem)' }}>
         {/* Left */}
         <div>
           <p className="section-num reveal" style={{ marginBottom: '1rem' }}>{tx_.num} — {tx_.section}</p>
-          <h2 className="reveal" style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '0.5rem' }}>
+          <h2 className="reveal" style={{ fontFamily: "var(--syne)", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '0.5rem' }}>
             {tx_.heading}<br />
             <span style={{ color: 'var(--accent)' }}>{tx_.accent}</span>
           </h2>
@@ -76,7 +93,7 @@ export default function About() {
         <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
           {tx_.stats.map((s, i) => (
             <div key={i} className="glass" style={{ padding: '2rem 1.5rem', borderRadius: 8 }}>
-              <div style={{ fontFamily: "'Syne', sans-serif", fontSize: '2.5rem', fontWeight: 800, color: i % 2 === 0 ? '#00df81' : '#00b4d8', lineHeight: 1, marginBottom: '0.5rem' }}>
+              <div style={{ fontFamily: "var(--syne)", fontSize: '2.5rem', fontWeight: 800, color: i % 2 === 0 ? '#00df81' : '#00b4d8', lineHeight: 1, marginBottom: '0.5rem' }}>
                 {s.num}
               </div>
               <div style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: 1.5 }}>{s.label}</div>

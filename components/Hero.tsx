@@ -1,6 +1,10 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import Spline from '@splinetool/react-spline';
+import dynamic from 'next/dynamic';
+const Spline = dynamic(() => import('@splinetool/react-spline'), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-slate-900/10 animate-pulse rounded-3xl" />,
+});
 import { useLang } from '@/context/LangContext';
 
 const ROLES = {
@@ -103,11 +107,11 @@ export default function Hero() {
         style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 clamp(1.5rem, 5vw, 4rem)', position: 'relative', zIndex: 30, pointerEvents: 'auto' }}
         className="hero-left w-full lg:max-w-[52%]"
       >
-        <p className="fade-in-up" style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem', animationDelay: '0.1s' }}>
+        <p className="fade-in-up" style={{ fontFamily: "var(--space-mono)", fontSize: '0.75rem', color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem', animationDelay: '0.1s' }}>
           {tx.greeting}
         </p>
 
-        <h1 className="fade-in-up" style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.02em', marginBottom: '0.5rem', animationDelay: '0.2s' }}>
+        <h1 className="fade-in-up" style={{ fontFamily: "var(--syne)", fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.02em', marginBottom: '0.5rem', animationDelay: '0.2s' }}>
           <span className="animate-gradient" style={{ background: 'linear-gradient(90deg, #B1D72B, #00b4d8, #B1D72B)', backgroundSize: '200% auto', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             {tx.name}<br />
             Gallego
@@ -116,7 +120,7 @@ export default function Hero() {
 
         <div className="sep fade-in-up" style={{ animationDelay: '0.3s' }} />
 
-        <h2 className="fade-in-up" style={{ fontFamily: "'Space Mono', monospace", fontSize: 'clamp(0.85rem, 1.5vw, 1rem)', color: 'var(--text)', marginBottom: '1.5rem', animationDelay: '0.4s', minHeight: '1.6em' }}>
+        <h2 className="fade-in-up" style={{ fontFamily: "var(--space-mono)", fontSize: 'clamp(0.85rem, 1.5vw, 1rem)', color: 'var(--text)', marginBottom: '1.5rem', animationDelay: '0.4s', minHeight: '1.6em' }}>
           {displayed}<span className="blink">_</span>
         </h2>
 
