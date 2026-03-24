@@ -83,6 +83,8 @@ export default function Contact() {
             <a
               key={s.label}
               href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="glass"
               style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.9rem 1.5rem', borderRadius: 6, textDecoration: 'none', transition: 'border-color 0.3s, transform 0.3s' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(124,92,191,0.5)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
